@@ -6,6 +6,10 @@
           <option name="url" value="https://github.com/Dimon14101010/dz.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="http://github.com" />
+          <option name="userName" value="Dimon14101010" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="$USER_HOME$/webStorm" />
