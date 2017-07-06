@@ -38,8 +38,12 @@
           <option name="url" value="https://github.com/Dimon14101010/dz/tree/dz_project" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/Dimon14101010/project.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
-    <option name="cloneParentDir" value="$USER_HOME$/webStorm/06_07_2017_school" />
+    <option name="cloneParentDir" value="$USER_HOME$/webStorm/main_project" />
   </component>
 </application>
