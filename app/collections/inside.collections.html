@@ -1,5 +1,6 @@
 <div ng-repeat = "insColl in vm.model.collectResponse.shots"
-style="display: inline">
+style="display: inline-table">
 
-<img ng-src="{{insColl.avatar}}" style="padding: 10px;width: 200px;">
+<div ><img ng-src="{{insColl.avatar}}" style="padding: 10px;width: 200px;"></div>
+    {{insColl.id}} --- {{insColl.title}}
 </div>

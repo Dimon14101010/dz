@@ -15,11 +15,16 @@
                   controllerAs: 'vm',
                   templateUrl: 'app/dashboard/dashboard.html'
               })
-              .state('collections', {
+              .state ('list',{
+                  abstract : true,
+                  url: '/list',
+                  templateUrl: 'app/list.html'
+              })
+              .state('list.collections', {
                   controller : 'CollectionCtrl',
                   controllerAs : 'vm',
                   url: '/collections',
-                  templateUrl: 'app/collections/collections.html',
+                  templateUrl: 'app/collections/list.collections.html',
 
               })
               .state('shot', {
@@ -28,7 +33,7 @@
                   controllerAs: 'vm',
                   templateUrl: 'app/shots/shot.html'
               })
-              .state ('insideCollection',{
+              .state ('collections.insideCollection',{
                   url: '/collections/:id',
                   controller :'insideCollectionCtrl',
                   controllerAs : 'vm',
