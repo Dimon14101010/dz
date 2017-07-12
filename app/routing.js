@@ -17,19 +17,20 @@
               })
               .state ('list',{
                   abstract : true,
-                  url: '/list',
+                  url: '',
                   templateUrl: 'app/list.html',
-                  resolve: {
-                      auth: function($http, $q,toastr) {
-                          return $http.get('http://dev-api.mobile.design/api/users')
-                              .then(null, function(response) {
-                                      toastr.error('Unauthorized user', 'Error');
-                                      console.log('Forbidden');
-                                      return $q.reject();
-                                  }
-                              );
-                      }
-                  }
+                  //resolve: {
+                  //    auth: function($http, $q,toastr) {
+                  //        return $http.get('http://dev-api.mobile.design/api/users')
+                  //            .then(null, function(response) {
+                  //                    toastr.error('Unauthorized user', 'Error');
+                  //                    console.log('Forbidden');
+                  //                    return $q.reject();
+                  //                }
+                  //            );
+                  //    }
+                  //}
+
               })
               .state('list.collections', {
                   controller : 'CollectionCtrl',
@@ -38,14 +39,9 @@
                   templateUrl: 'app/collections/collections.html',
 
               })
-              .state('shot', {
-                  url: '/shots/:id',
-                  controller: 'ShotController',
-                  controllerAs: 'vm',
-                  templateUrl: 'app/shots/shot.html'
-              })
-              .state ('collections.insideCollection',{
-                  url: '/collections/:id',
+
+              .state ('list.insideCollection',{
+                  url: 'collections/:id',
                   controller :'insideCollectionCtrl',
                   controllerAs : 'vm',
                   templateUrl: 'app/collections/inside.collections.html'
@@ -57,6 +53,11 @@
                   templateUrl: 'app/shots/shot.create.html',
 
 
-              });
+              }).state('shot', {
+              url: '/shots/:id',
+              controller: 'ShotController',
+              controllerAs: 'vm',
+              templateUrl: 'app/shots/shot.html'
+          });
       });
 })();
