@@ -18,13 +18,24 @@
               .state ('list',{
                   abstract : true,
                   url: '/list',
-                  templateUrl: 'app/list.html'
+                  templateUrl: 'app/list.html',
+                  resolve: {
+                      auth: function($http, $q,toastr) {
+                          return $http.get('http://dev-api.mobile.design/api/users')
+                              .then(null, function(response) {
+                                      toastr.error('Unauthorized user', 'Error');
+                                      console.log('Forbidden');
+                                      return $q.reject();
+                                  }
+                              );
+                      }
+                  }
               })
               .state('list.collections', {
                   controller : 'CollectionCtrl',
                   controllerAs : 'vm',
                   url: '/collections',
-                  templateUrl: 'app/collections/list.collections.html',
+                  templateUrl: 'app/collections/collections.html',
 
               })
               .state('shot', {
@@ -39,22 +50,12 @@
                   controllerAs : 'vm',
                   templateUrl: 'app/collections/inside.collections.html'
               })
-              .state('shotCreate', {
+              .state('list.shotCreate', {
                   url:'/create',
                   controller: 'ShotController',
                   controllerAs : 'vm',
                   templateUrl: 'app/shots/shot.create.html',
-                  resolve: {
-                      auth: function($http, $q,toastr) {
-                          return $http.get('http://dev-api.mobile.design/api/users')
-                              .then(null, function(response) {
-                                  toastr.error('Unauthorized user', 'Error');
-                                  console.log('Forbidden');
-                                  return $q.reject();
-                              }
-                          );
-                      }
-                  }
+
 
               });
       });
