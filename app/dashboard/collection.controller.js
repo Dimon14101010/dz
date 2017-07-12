@@ -15,7 +15,7 @@
             collectResponse: ShotModel.collection.get({id: $stateParams.id})
 
         };
-        console.log ('get collection')
+        console.log (vm.model)
 
     }
 

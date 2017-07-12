@@ -30,7 +30,8 @@
               })
               .state ('insideCollection',{
                   url: '/collections/:id',
-
+                  controller :'insideCollectionCtrl',
+                  controllerAs : 'vm',
                   templateUrl: 'app/collections/inside.collections.html'
               })
               .state('shotCreate', {
