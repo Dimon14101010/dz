@@ -18,7 +18,8 @@
                     url: 'http://dev-api.mobile.design/api/shots/check_duplicate'
                 }
             }),
-            collection : $resource('http://dev-api.mobile.design/api/collections', {id:'@id'})
+            collection : $resource('http://dev-api.mobile.design/api/collections/:id', {id:'@id'}),
+            insideCollection :$resource('http://dev-api.mobile.design/api/collections/:id/shots', {id:'@id'})
         };
 
         return shots;
