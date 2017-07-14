@@ -4,9 +4,19 @@ angular.module('app')
     .controller('regCtrl', regCtrl);
     regCtrl.$inject = ['$scope','$http'];
         function regCtrl($scope,$http) {
+
+            $scope.submit = function (event,user) {
+                event.preventDefault();
+            sendData(user);
+
+
+            }
+
         $scope.userData = {};
 
-        $scope.sendData = function (user) {
+
+        function sendData (user) {
+
             $scope.userData = angular.copy(user);
             if ($scope.register.$valid){
             $http ({

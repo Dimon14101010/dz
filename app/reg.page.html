@@ -1,11 +1,11 @@
 <div>
-<form novalidate name="register">
+<form novalidate name="register" ng-submit="submit ($event,user)">
 
     Email : <input ng-model="user.email" required type="email" name="email"><br>
     Password : <input ng-model="user.pass" required type="text" name="pass" ng-minlength="8"><br>
     Confirm password : <input ng-model="user.confirmPass" required name="confirmPass" ng-minlength="8" pass-check passworddd="user.pass"><br>
 
-    <input type="submit" ng-click="sendData (user)">
+    <input type="submit">
 
     <div ng-messages="register.email.$error">
         <div ng-message="required">email require</div>
