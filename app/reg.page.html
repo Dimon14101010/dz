@@ -1,0 +1,27 @@
+<div>
+<form novalidate name="register">
+
+    Email : <input ng-model="user.email" required type="email" name="email"><br>
+    Password : <input ng-model="user.pass" required type="text" name="pass" ng-minlength="8"><br>
+    Confirm password : <input ng-model="user.confirmPass" required name="confirmPass" pass-check pasworddd="pass"><br>
+
+    <input type="submit" ng-click="sendData (user)">
+
+    <div ng-messages="register.email.$error">
+        <div ng-message="required">email require</div>
+        <div ng-message="email">email is incorrect</div>
+    </div>
+    <div ng-messages="register.pass.$error">
+        <div ng-message="required">password require</div>
+        <div ng-message="minlength">pass too short</div>
+    </div>
+    <div ng-messages="register.confirmPass.$error">
+        <div ng-message="required">confirmation require</div>
+        <div ng-message="pass-check">no valid</div>
+
+</form>
+
+    {{user | json}}<br>
+   user Data {{userData | json}}
+
+</div>

@@ -6,9 +6,9 @@
         .module("app")
         .factory("ShotModel", ShotModel);
 
-    ShotModel.$inject = ['$resource'];
+    ShotModel.$inject = ['$resource','$http'];
 
-    function ShotModel($resource) {
+    function ShotModel($resource,$http,regCtrl) {
         
         let shots = {
             api: $resource('http://dev-api.mobile.design/api/shots/:id', {id: '@id'}, {
@@ -20,6 +20,7 @@
             }),
             collection : $resource('http://dev-api.mobile.design/api/collections/:id', {id:'@id'}),
             insideCollection :$resource('http://dev-api.mobile.design/api/collections/:id/shots', {id:'@id'})
+
         };
 
         return shots;
