@@ -15,6 +15,10 @@ angular
                     return mv == scope.passworddd;
 
                 }
+                scope.$watch('passworddd', function () {
+                    ctrl.$validate();
+                })
+
             }
         }
     });
