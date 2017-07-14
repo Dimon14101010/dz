@@ -5,18 +5,13 @@ angular.module('app')
     regCtrl.$inject = ['$scope','$http'];
         function regCtrl($scope,$http) {
 
-            $scope.submit = function (event,user) {
-                event.preventDefault();
-            sendData(user);
 
-
-            }
 
         $scope.userData = {};
 
 
-        function sendData (user) {
-
+        $scope.sendData = function (user) {
+            $scope.inProgress = true;
             $scope.userData = angular.copy(user);
             if ($scope.register.$valid){
             $http ({
@@ -24,6 +19,10 @@ angular.module('app')
                 url : 'http://dev-api.mobile.design/api/auth',
                 data : {'email':$scope.userData.email,'password' :$scope.userData.pass,'password_confirmation' : $scope.userData.confirmPass}
             })
+                .finally (function () {
+                    $scope.inProgress = false;
+                });
+
             }
         }
 
