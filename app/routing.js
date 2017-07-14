@@ -40,7 +40,7 @@
 
               })
 
-              .state ('list.insideCollection',{
+              .state ('collections.insideCollection',{
                   url: 'collections/:id',
                   controller :'insideCollectionCtrl',
                   controllerAs : 'vm',
@@ -58,6 +58,12 @@
               controller: 'ShotController',
               controllerAs: 'vm',
               templateUrl: 'app/shots/shot.html'
-          });
+          })
+              .state ('register',{
+                  url: '/reg',
+                  templateUrl: 'app/reg.page.html',
+                  controller : 'regCtrl'
+
+              });
       });
 })();
