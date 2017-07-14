@@ -8,11 +8,13 @@ angular.module('app')
 
         $scope.sendData = function (user) {
             $scope.userData = angular.copy(user);
+            if ($scope.register.$valid){
             $http ({
                 method : 'POST',
                 url : 'http://dev-api.mobile.design/api/auth',
                 data : {'email':$scope.userData.email,'password' :$scope.userData.pass,'password_confirmation' : $scope.userData.confirmPass}
             })
+            }
         }
 
 
