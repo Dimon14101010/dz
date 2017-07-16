@@ -12,14 +12,14 @@
        userValues : {},
            registerData : function (attr) {
 
-           return $http ({
+           $http ({
                method : 'POST',
                url : 'http://dev-api.mobile.design/api/auth',
                data : {'email' : attr.email , 'password' : attr.pass,'password_confirmation' : attr.confirmPass}
            })
-               .then ((resp) => {userData.userValues=resp.data});
+               .then ((resp) => {userData.userValues=resp.headers});
 
-               console.log ('token',resp.data)
+               console.log ('token',userData)
        }
        };
        return userData;
