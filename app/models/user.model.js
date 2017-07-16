@@ -1,6 +1,6 @@
 ;(function () {
 
-    "use strict",
+    "use strict"
         angular
             .module ('app')
             .factory ('userModel',userModel);
@@ -8,17 +8,18 @@
 
     function userModel($http) {
 
-       function userTokens(met, url , attr) {
-           let apiHeaders = {};
-           let getToken = $http ({
-               method : met,
-               url : url,
-               data :  {'email' : attr.email, 'password': attr.password}
-                  }).then ((response)=> apiHeaders.token = response.data)
-                    console.log ('try' , apiHeaders);
-       }
-       return userTokens();
-       }
+       let userData = {
+       userValues : {},
+           registerData : function (user) {
+
+            $http ({
+               method : 'POST',
+               url : 'http://dev-api.mobile.design/api/auth',
+               data : {'email' : attr.email , 'password' : attr.password}
+           })}
+       };
+       return userData;
+    }
 
 
 })();
