@@ -2,7 +2,7 @@
 
 angular.module('app')
     .controller('regCtrl', regCtrl);
-    regCtrl.$inject = ['$scope','$http','userModel'];
+    regCtrl.$inject = ['$scope','userModel'];
         function regCtrl($scope,userModel) {
 
 

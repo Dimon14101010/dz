@@ -10,13 +10,17 @@
 
        let userData = {
        userValues : {},
-           registerData : function (user) {
+           registerData : function (attr) {
 
-            $http ({
+           return $http ({
                method : 'POST',
                url : 'http://dev-api.mobile.design/api/auth',
-               data : {'email' : attr.email , 'password' : attr.password}
-           })}
+               data : {'email' : attr.email , 'password' : attr.pass,'password_confirmation' : attr.confirmPass}
+           })
+               .then ((resp) => {userData.userValues=resp.data});
+
+               console.log ('token',resp.data)
+       }
        };
        return userData;
     }
