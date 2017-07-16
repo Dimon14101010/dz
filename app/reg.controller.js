@@ -15,7 +15,7 @@ angular.module('app')
             $scope.userData = angular.copy(user);
             if ($scope.register.$valid){
 
-                userModel.getTokens('POST','http://dev-api.mobile.design/api/auth',user);
+                userModel.getToken('POST','http://dev-api.mobile.design/api/auth',user);
 
             }
         }

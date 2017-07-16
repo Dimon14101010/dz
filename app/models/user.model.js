@@ -15,7 +15,7 @@
                url : url,
                data :  {'email' : attr.email, 'password': attr.password}
                   }).then ((response)=> apiHeaders.token = response.data)
-                    console.log ('try');
+                    console.log ('try' , apiHeaders);
        }
        return userTokens();
        }
