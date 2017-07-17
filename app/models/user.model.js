@@ -17,10 +17,21 @@
                url : 'http://dev-api.mobile.design/api/auth',
                data : {'email' : attr.email , 'password' : attr.pass,'password_confirmation' : attr.confirmPass}
            })
-               .then ((resp) => {userData.userValues=resp.headers; console.log ('token',userData.userValues)});
+               .then ((resp) => {userData.userValues=resp.headers(); console.log ('token',userData.userValues)});
 
 
-       }
+       },
+           authData : function (attr) {
+
+               $http ({
+                   method : 'POST',
+                   url : 'http://dev-api.mobile.design/api/auth/sign_in',
+                   data : {'email' : attr.email , 'password' : attr.pass}
+               })
+                   .then ((resp) => {userData.userValues=resp.headers(); console.log ('token',userData.userValues)});
+
+
+           }
        };
        return userData;
     }
