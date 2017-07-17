@@ -21,7 +21,8 @@
                   resolve: {
                       auth: function($http, $q,toastr) {
                           return $http.get('http://dev-api.mobile.design/api/users')
-                              .then(function () {
+                              .then(function () {toastr.success('welcome', 'hello');
+                                  console.log('Succes');
                                   
                                   }, function(response) {
                                       toastr.error('Unauthorized user', 'Error');
@@ -41,10 +42,11 @@
 
               })
 
-              .state ('list.insideCollection',{
+              .state ('insideCollection',{
+
                   url: 'collections/:id',
                   controller :'insideCollectionCtrl',
-
+                  controllerAs : 'vm',
                   templateUrl: 'app/collections/inside.collections.html'
               })
               .state('list.shotCreate', {

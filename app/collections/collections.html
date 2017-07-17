@@ -2,9 +2,9 @@
      style="background-color: aquamarine;margin: 10px;padding: 10px;"
      >
 
-<img ng-src="http://dev.mobile.design/img/phone.svg" ui-sref="list.insideCollection({id: {{coll.id}}})">
+<img ng-src="http://dev.mobile.design/img/phone.svg">
 
-    {{coll.id}} - {{coll.title}}
+    <a ui-sref="insideCollection({id: {{coll.id}}})">{{coll.id}} - {{coll.title}}</a>
 
 </div>
 

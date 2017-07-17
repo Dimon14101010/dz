@@ -6,9 +6,7 @@
         .module("app")
         .component("appInsCollection", {
 
-            bindings: {
-                insCollections: '='
-            },
+
             controller : 'insideCollectionCtrl',
             controllerAs : 'vm',
 

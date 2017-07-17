@@ -8,7 +8,7 @@
 
     ShotModel.$inject = ['$resource','$http'];
 
-    function ShotModel($resource,$http,regCtrl) {
+    function ShotModel($resource,$http) {
         
         let shots = {
             api: $resource('http://dev-api.mobile.design/api/shots/:id', {id: '@id'}, {
