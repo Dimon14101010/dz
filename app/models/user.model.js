@@ -9,6 +9,7 @@
     function userModel($http) {
 
        let userData = {
+
        userValues : {},
            registerData : function (attr) {
 

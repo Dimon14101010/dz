@@ -4,10 +4,15 @@
 
     angular
         .module ("app")
-        .factory ('myInterceptor', function (userModel) {
+        .factory ('myInterceptor', function ($injector) {
             return {
                 request : function (config) {
-                    config.headers['my-test-token']='userModel.userValues'
+                    config.headers['accesstoken'] = $injector.get('userModel').userValues.accesstoken;
+                    config.headers['client'] = $injector.get('userModel').userValues.client;
+                    config.headers['tokentype'] = $injector.get('userModel').userValues.tokentype;
+                    config.headers['uid'] = $injector.get('userModel').userValues.uid;
+                    config.headers['expiry'] = $injector.get('userModel').userValues.expiry;
+                    return config;
                 }
             }
         });
