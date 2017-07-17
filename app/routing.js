@@ -21,7 +21,9 @@
                   resolve: {
                       auth: function($http, $q,toastr) {
                           return $http.get('http://dev-api.mobile.design/api/users')
-                              .then(null, function(response) {
+                              .then(function () {
+                                  
+                                  }, function(response) {
                                       toastr.error('Unauthorized user', 'Error');
                                       console.log('Forbidden');
                                       return $q.reject();

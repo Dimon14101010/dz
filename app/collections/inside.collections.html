@@ -1,12 +1,9 @@
-<div carousel class="owl-carousel owl-theme">
+I AM INSIDECOLLECTION
 
-<div
-        carousel-item
-        ng-repeat = "insColl in vm.model.collectResponse.shots  "
+<div ng-repeat = "insColl in vm.model.collectResponse.shots"
         style="display: inline-table">
 
 
-<img ng-src="{{insColl.avatar}}" style="width: 200px;">
+<img ng-src="{{insColl.shots.avatar}}" style="width: 200px;">
     {{insColl.id}} --- {{insColl.title}}
-</div>
 </div>

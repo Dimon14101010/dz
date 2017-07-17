@@ -1,8 +1,8 @@
 <div ng-repeat="coll in vm.model.collectResponse.collections"
      style="background-color: aquamarine;margin: 10px;padding: 10px;"
-     ui-sref="list.insideCollection({id: {{coll.id}}})">
+     >
 
-<img ng-src="http://dev.mobile.design/img/phone.svg">
+<img ng-src="http://dev.mobile.design/img/phone.svg" ui-sref="list.insideCollection({id: {{coll.id}}})">
 
     {{coll.id}} - {{coll.title}}
 

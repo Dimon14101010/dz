@@ -32,7 +32,7 @@
 
         Email : <input ng-model="auth.email" required type="email" name="authEmail"><br>
         Password : <input ng-model="auth.pass" required type="text" name="authPass" ng-minlength="8"><br>
-        <input type="submit" value="Sign in" ng-click="sendDataAuth (auth)">
+        <input type="submit" value="Sign in" ng-click="sendDataAuth (auth) ng-disabled="inProgress"">
 
         <div ng-messages="auth.authEmail.$error">
             <div ng-message="required">email require</div>
@@ -45,7 +45,7 @@
 
         {{auth | json}}<br>
         user Data {{userData | json}}<br>
-        token = {{userModel.userData}}
+
 
     </form>
 

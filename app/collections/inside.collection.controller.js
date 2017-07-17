@@ -12,10 +12,10 @@
         let vm = this;
 
         vm.model = {
-            collectResponse: ShotModel.insideCollection.get({id: $stateParams.id}),
+            insideCollectResponse: ShotModel.insideCollection.get({id: $stateParams.id}),
 
         };
-        console.log ('inside collections')
+        console.log ('inside collections srabotalo',vm.model.insideCollectResponse)
 
     }
 
