@@ -18,32 +18,31 @@
               .state ('list',{
                   abstract : true,
                   url: '',
-                  templateUrl: 'app/list.html',
-                  //resolve: {
-                  //    auth: function($http, $q,toastr) {
-                  //        return $http.get('http://dev-api.mobile.design/api/users')
-                  //            .then(null, function(response) {
-                  //                    toastr.error('Unauthorized user', 'Error');
-                  //                    console.log('Forbidden');
-                  //                    return $q.reject();
-                  //                }
-                  //            );
-                  //    }
-                  //}
+                  resolve: {
+                      auth: function($http, $q,toastr) {
+                          return $http.get('http://dev-api.mobile.design/api/users')
+                              .then(null, function(response) {
+                                      toastr.error('Unauthorized user', 'Error');
+                                      console.log('Forbidden');
+                                      return $q.reject();
+                                  }
+                              );
+                      }
+                  }
 
               })
               .state('list.collections', {
                   controller : 'CollectionCtrl',
                   controllerAs : 'vm',
                   url: '/collections',
-                  templateUrl: 'app/collections/collections.html',
+                  templateUrl: 'app/collections/collections.html'
 
               })
 
-              .state ('collections.insideCollection',{
+              .state ('list.insideCollection',{
                   url: 'collections/:id',
                   controller :'insideCollectionCtrl',
-                  controllerAs : 'vm',
+
                   templateUrl: 'app/collections/inside.collections.html'
               })
               .state('list.shotCreate', {

@@ -2,11 +2,11 @@
 
 <div
         carousel-item
-        ng-repeat = "insColl in vm.model.collectResponse.shots"
+        ng-repeat = "insColl in vm.model.collectResponse.shots  "
         style="display: inline-table">
 
 
-<div><img ng-src="{{insColl.avatar}}" style="width: 200px;"></div>
+<img ng-src="{{insColl.avatar}}" style="width: 200px;">
     {{insColl.id}} --- {{insColl.title}}
 </div>
 </div>
