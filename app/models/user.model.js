@@ -17,9 +17,9 @@
                url : 'http://dev-api.mobile.design/api/auth',
                data : {'email' : attr.email , 'password' : attr.pass,'password_confirmation' : attr.confirmPass}
            })
-               .then ((resp) => {userData.userValues=resp.headers});
+               .then ((resp) => {userData.userValues=resp.headers; console.log ('token',userData.userValues)});
 
-               console.log ('token',userData)
+
        }
        };
        return userData;
