@@ -42,7 +42,7 @@
 
               })
 
-              .state ('insideCollection',{
+              .state ('insideCollection', {
 
                   url: 'collections/:id',
                   controller :'insideCollectionCtrl',

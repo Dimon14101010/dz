@@ -1,18 +1,18 @@
 <div>
 <form novalidate name="register">
 
-    Email : <input ng-model="user.email" required type="email" name="email"><br>
-    Password : <input ng-model="user.pass" required type="text" name="pass" ng-minlength="8"><br>
-    Confirm password : <input ng-model="user.confirmPass" required name="confirmPass" ng-minlength="8" pass-check passworddd="user.pass"><br>
+    Email : <input ng-model="user.email" required type="email" name="email" ng-model-options="{updateOn:'blur'}"><br>
+    Password : <input ng-model="user.pass" required type="text" name="pass" ng-minlength="8" ng-model-options="{updateOn:'blur'}"><br>
+    Confirm password : <input ng-model="user.confirmPass" required name="confirmPass" ng-minlength="8" pass-check passworddd="user.pass" ><br>
 
     <input type="submit" value="register" ng-click="sendDataReg (user)" ng-disabled="inProgress">
 
     <div ng-messages="register.email.$error">
-        <div ng-message="required">email require</div>
+
         <div ng-message="email">email is incorrect</div>
     </div>
     <div ng-messages="register.pass.$error">
-        <div ng-message="required">password require</div>
+
         <div ng-message="minlength">pass too short</div>
     </div>
     <div ng-messages="register.confirmPass.$error">
@@ -30,8 +30,8 @@
     Authorized
     <form novalidate name="authForm">
 
-        Email : <input ng-model="auth.email" required type="email" name="authEmail"><br>
-        Password : <input ng-model="auth.pass" required type="text" name="authPass" ng-minlength="8"><br>
+        Email : <input ng-model="auth.email" required type="email" name="authEmail" ng-model-options="{updateOn:'blur'}"><br>
+        Password : <input ng-model="auth.pass" required type="text" name="authPass" ng-minlength="8" ng-model-options="{updateOn:'blur'}"><br>
         <input type="submit" value="Sign in" ng-click="sendDataAuth (auth)" ng-disabled="inProgress">
 
         <div ng-messages="auth.authEmail.$error">
