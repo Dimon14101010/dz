@@ -14,12 +14,12 @@
                     config.headers['expiry'] = $injector.get('userModel').userValues.expiry;
                     return config;
                 }
-            }
+            };
         });
 
     angular.module("app")
         .config (function ($httpProvider) {
         $httpProvider.interceptors.push('myInterceptor');
-    })
+    });
 
 })();
