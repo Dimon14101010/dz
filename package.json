@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prestart": "echo 'hello'",
+    "prestart": "gulp build_js && echo 'hello coach dont kill cats plz'",
     "start": "static-server -n index.html -p 3000",
     "poststart": "echo 'static close'",
     "test": "echo \"Error: no test specified\" && exit 1"
