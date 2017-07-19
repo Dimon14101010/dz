@@ -10,6 +10,6 @@
               templateUrl: "app/directives/header.template.html",
           transclude : true
 
-      })
+      });
 
 })();

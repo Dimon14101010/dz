@@ -42,7 +42,7 @@
 
               .state ('list.collections.insideCollection', {
 
-                  url: 'collections/:id',
+                  url: '/:id',
                   controller :'insideCollectionCtrl',
                   controllerAs : 'vm',
                   templateUrl: 'app/collections/inside.collections.html'
@@ -51,10 +51,11 @@
                   url:'/create',
                   controller: 'ShotController',
                   controllerAs : 'vm',
-                  templateUrl: 'app/shots/shot.create.html',
+                  templateUrl: 'app/shots/shot.create.html'
 
 
-              }).state('shot', {
+              })
+              .state('shot', {
               url: '/shots/:id',
               controller: 'ShotController',
               controllerAs: 'vm',

@@ -12,6 +12,6 @@
 
             templateUrl: "app/collections/inside.collections.html"
 
-        })
+        });
 
 })();

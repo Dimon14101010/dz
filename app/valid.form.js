@@ -14,12 +14,12 @@ angular
                 ctrl.$validators.checkPass = function (mv , vv) {
                     return mv == scope.passworddd;
 
-                }
+                };
                 scope.$watch('passworddd', function () {
                     ctrl.$validate();
-                })
+                });
 
             }
-        }
+        };
     });
 })();

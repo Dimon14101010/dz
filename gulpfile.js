@@ -47,12 +47,12 @@ gulp.task ('eslint_check' , function () {
             'no-unused-vars': 0,
             'new-cap': 1,
             'no-shadow': 0,
-            'strict': 2,
+            'strict': 0,
             'no-invalid-regexp': 2,
             'comma-dangle': 2,
             'no-undef': 1,
             'no-new': 1,
-            'no-extra-semi': 1,
+            'no-extra-semi': 0,
             'no-debugger': 2,
             'no-caller': 1,
             'semi': 1,
@@ -60,7 +60,7 @@ gulp.task ('eslint_check' , function () {
             'no-unreachable': 2
         },
 
-            globals: ['$'],
+            globals: ['$','angular'],
 
             envs: ['node']}))
         .pipe (eslint.format())

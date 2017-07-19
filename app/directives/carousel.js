@@ -8,10 +8,10 @@
                 restrict : 'A',
                 controller : function ($element) {
                     this.startCarousel = function () {
-                        $($element).owlCarousel({items:3 , nav:true, loop:true})
-                    }
+                        $($element).owlCarousel({items:3 , nav:true, loop:true});
+                    };
                 }
-            }
+            };
         })
 
         .directive ('carouselItem' , function () {
@@ -24,7 +24,7 @@
                     owlCarouselCtrl.startCarousel();
                 }
             }
-        }
-    })
+        };
+    });
 
 })();
