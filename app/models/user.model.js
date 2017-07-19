@@ -4,9 +4,9 @@
         angular
             .module ('app')
             .factory ('userModel',userModel);
-    userModel.$inject = ['$http'];
+    userModel.$inject = ['$http','toastr'];
 
-    function userModel($http) {
+    function userModel($http,toastr) {
 
        let userData = {
 
@@ -24,12 +24,17 @@
        },
            authData : function (attr) {
 
-               $http ({
+               return $http ({
                    method : 'POST',
                    url : 'http://dev-api.mobile.design/api/auth/sign_in',
                    data : {'email' : attr.email , 'password' : attr.pass}
                })
-                   .then ((resp) => {userData.userValues=resp.headers(); console.log ('token',userData.userValues)});
+                   .then ((resp) => {userData.userValues=resp.headers(); console.log ('token',userData.userValues);
+                       toastr.success('register succesfull', 'hello');
+               console.log('Succes');},function (resp) {
+                       toastr.error(resp.data.errors, 'Error');
+                       console.log('Forbidden');
+                   })
 
 
            }

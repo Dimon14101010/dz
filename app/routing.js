@@ -17,14 +17,12 @@
               })
               .state ('list',{
                   abstract : true,
+                  templateUrl : 'app/list.html',
                   url: '',
                   resolve: {
                       auth: function($http, $q,toastr) {
                           return $http.get('http://dev-api.mobile.design/api/users')
-                              .then(function () {toastr.success('welcome', 'hello');
-                                  console.log('Succes');
-                                  
-                                  }, function(response) {
+                              .then(function (){}, function(response) {
                                       toastr.error('Unauthorized user', 'Error');
                                       console.log('Forbidden');
                                       return $q.reject();
@@ -42,7 +40,7 @@
 
               })
 
-              .state ('insideCollection', {
+              .state ('list.collections.insideCollection', {
 
                   url: 'collections/:id',
                   controller :'insideCollectionCtrl',

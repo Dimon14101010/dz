@@ -1,9 +1,11 @@
 ;(function () {
 
+    "use strict";
+
 angular.module('app')
     .controller('regCtrl', regCtrl);
-    regCtrl.$inject = ['$scope','userModel'];
-        function regCtrl($scope,userModel) {
+    regCtrl.$inject = ['$scope','userModel','toastr'];
+        function regCtrl($scope,userModel,toastr) {
 
 
 
@@ -16,6 +18,9 @@ angular.module('app')
             if ($scope.register.$valid){
 
                 userModel.registerData(user);
+                toastr.success('register succesfull', 'hello');
+                console.log('Succes');
+
 
             }
         }
@@ -24,7 +29,7 @@ angular.module('app')
                 $scope.userData = angular.copy(auth);
                 if ($scope.authForm.$valid){
 
-                    userModel.authData(auth);
+                    userModel.authData(auth).finally(()=>$scope.inProgress = false);
 
                 }
             }
@@ -32,5 +37,5 @@ angular.module('app')
 
 
 
-    };
+    }
 })();
