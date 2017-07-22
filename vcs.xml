@@ -10,6 +10,18 @@
           <option name="url" value="https://github.com/agilie/AIS-MobileDesign.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/ninjatronic/ngGeolocation/blob/master/demo/index.html" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/ninjatronic/ngGeolocation/tree/master/demo" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/ninjatronic/ngGeolocation" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="$USER_HOME$/webStorm" />
