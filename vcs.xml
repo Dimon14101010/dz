@@ -34,6 +34,10 @@
           <option name="url" value="https://github.com/agilie/AIS-Angular" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/Dimon14101010/angular_4.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="$USER_HOME$/webStorm" />
